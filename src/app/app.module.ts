@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { AuthModule } from './auth/auth.module';
 import { ServicesComponent } from './services/services.component';
+import { CompaniesListComponent } from './companies-list/companies-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ServicesComponent } from './services/services.component';
     HeaderComponent,
     HomeComponent,
     ProfileComponent,
-    ServicesComponent
+    ServicesComponent,
+    CompaniesListComponent
   ],
   imports: [
     BrowserModule,
