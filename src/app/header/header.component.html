@@ -17,12 +17,6 @@
         </ng-container>
         <ng-container *ngIf="auth.isAuthenticated()">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/companies-list']">Manage Companies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/services']">Services</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link">
               {{ auth.getUsername() }}
             </a>
