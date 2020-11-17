@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Our Products</h3>
+        </div>
+        <div class="col-sm-12">
+            <hr>
+            <br>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <!-- Starts Here -->
+            <div class="row mb-2">
+                <div class="col-md-6" *ngFor="let p of products">
+                  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <h3 class="mb-0">{{ p.pdetails }}</h3>
+                        <br>
+                        <p class="card-text mb-auto">This is a smartphone offered by {{ p.pcompany }}</p>
+                        <p class="card-text mb-auto">${{ p.price }}</p>
+                        <a [routerLink]="['/cart', { id : p._id }]"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="../../assets/images/{{p.pimage}}" alt="duo" width="200" height="250">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- Ends Here -->
+        </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Company } from "../models/company";
+import { Product } from "../models/product";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -35,5 +36,7 @@ export class CompanyService {
   deleteCompanyById(id: any): Observable<Company> {
     return this.http.delete<Company>(`${this.companyUrl}/${id}`);
   }
+
+ 
 
 }

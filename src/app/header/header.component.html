@@ -1,6 +1,7 @@
-<nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-light navbar-expand-sm" style="background-color: #e3f2fd;">
   <div class="container">
-    <a routerLink="/" class="navbar-brand" routerLinkActive="active">Admin Portal</a>
+    <a routerLink="/" class="navbar-brand" routerLinkActive="active"><b>SimpliShop</b></a>
+    <a routerLink="/products" class="navbar-item nav-item" style="padding-left: 20px; padding-right: 20px;">Products</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <ng-container *ngIf="!auth.isAuthenticated()">
@@ -28,6 +29,13 @@
           </li>
         </ng-container>
       </ul>
+      <span style="padding-left: 10px;">
+        <a routerLink="/cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </span>
     </div>
   </div>
 </nav>
+
+

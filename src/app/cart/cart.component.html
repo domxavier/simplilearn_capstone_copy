@@ -1,0 +1,81 @@
+<div class="container" *ngIf=(nonEmptyCart)>
+    <div class="row">
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Your Cart</h3>
+        </div>
+        <div class="col-sm-12">
+            <hr>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="row mb-2">
+                <div class="col-12" *ngFor="let item of items">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"  style="padding: 30px;">
+                        <div class="col-8 offset-1 p-8 d-flex flex-column position-static">
+                            <h3 class="mb-0">{{ item.product.pdetails }}</h3>
+                        </div>
+                        <div class="col-2 d-flex flex-column position-static">
+                            <p class="card-text mb-auto"><b>{{ item.quantity }}</b> x ${{ item.product.price }}</p>
+                        </div>
+                        <div class="col-1">
+                            <a (click)="remove(item.product._id)"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr>
+        </div>
+        <div class="col-12">
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="row mb-2">
+                <div class="col-12">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"  style="padding: 30px;">
+                        <div class="col-8 offset-1 p-8 d-flex flex-column position-static">
+                            <h3 class="mb-0">TOTAL</h3>
+                        </div>
+                        <div class="col-3 d-flex flex-column position-static">
+                            <p class="card-text mb-auto"><b>${{ total }}</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr>
+        </div>
+        <div class="col-12 text-center">
+            <input type="button" class="btn btn-primary align-self-center" value="Checkout" (click)="checkOut()">
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf=(emptycart)>
+    <div class="row">
+        <div class="col-12">
+            <br>
+        </div>
+        <div class="col-12">
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h1>Your Cart is Empty!</h1>
+        </div>
+    </div>
+</div>
