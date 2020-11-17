@@ -21,7 +21,7 @@ import { CheckoutShippingComponent } from './checkout-shipping/checkout-shipping
     ProfileComponent,
     ProductsPageComponent,
     CartComponent,
-    CheckoutShippingComponent,
+    CheckoutShippingComponent
   ],
   imports: [
     BrowserModule,
