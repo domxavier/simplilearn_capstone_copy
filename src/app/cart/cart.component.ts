@@ -1,6 +1,8 @@
+import { CartService } from './../services/cart.service';
+import { Cart } from './../models/cart';
 import { Product } from './../models/product';
 import { ProductService } from './../services/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from './../models/item';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,7 +21,8 @@ export class CartComponent implements OnInit {
 
   constructor(
     private aroute : ActivatedRoute,
-    private productService : ProductService
+    private productService : ProductService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -112,7 +115,27 @@ export class CartComponent implements OnInit {
 	checkOut() {
 		let cart: any = JSON.parse(localStorage.getItem('cart'));
 		this.cartInfo= cart;
-		console.log(cart);	// call POST method to store Cart Details in DB (to service and then to express module)
-	}
+		//console.log(cart);	// call POST method to store Cart Details in DB (to service and then to express module)
+    let prods = [];
+    let i = 0;
+    for (let item of this.items) {
+      //console.log(item.product._id, item.quantity);
+      prods.push(item.product._id, item.quantity);
+    }
+    var final_Cart = new Cart();
+    final_Cart.id = "something";
+    final_Cart.product = prods;
+    // console.log("The CART ITEMS");
+    // console.log(final_Cart);
+
+    // let cart: any = [];
+    // cart.push(JSON.stringify(item));		// convert json to string
+    // localStorage.setItem('cart', JSON.stringify(cart));
+
+    let checkout_cart : any = [];
+    checkout_cart.push(JSON.stringify(final_Cart));
+    localStorage.setItem('checkout_cart', JSON.stringify(checkout_cart));
+    this.router.navigate(['/checkout']);
+  }
 
 }

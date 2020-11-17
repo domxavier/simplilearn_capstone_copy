@@ -1,9 +1,9 @@
 export class Product {
-    _id : String;
-    pcode : String;
-    name : String;
-    details : String;
-    imageSource : String;
+    _id : string;
+    pcode : string;
+    name : string;
+    details : string;
+    imageSource : string;
     price : Number;
-    brand : String;
+    brand : string;
 }
