@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProductsPageComponent } from './products-page/products-page.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutShippingComponent } from './checkout-shipping/checkout-shipping.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CheckoutShippingComponent } from './checkout-shipping/checkout-shipping
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
