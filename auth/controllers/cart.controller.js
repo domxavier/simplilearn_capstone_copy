@@ -7,8 +7,8 @@ exports.addCart = (req,res) => {
     // })
     let uid  = req.body.id;
     let prods = req.body.product;
-    //console.log(uid);
-    //console.log(prods);
+    // console.log(uid);
+    // console.log(prods);
     // Cart.find({userid : uid}, (err, data) => {
     //     if(err) throw err;
     //     if(data.length == 0) {

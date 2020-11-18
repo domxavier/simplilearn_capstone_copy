@@ -22,9 +22,9 @@ export class CheckoutShippingComponent implements OnInit {
     let idd = JSON.parse(localStorage.getItem('auth_meta')).userId;
     console.log(idd);
 
-    // this.cartService.addCart(finalCart).subscribe(
-    //   data => console.log(data)
-    // )
+    this.cartService.addCart(finalCart).subscribe(
+      data => console.log(data)
+    )
 
   }
 
